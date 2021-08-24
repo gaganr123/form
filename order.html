@@ -46,6 +46,19 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
+input[type=reset] {
+  background-color: #d6947a;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=reset]:hover {
+  background-color: #a0454c;
+}
 
 .container {
   border-radius: 5px;
@@ -76,7 +89,16 @@ input[type=submit]:hover {
   display: table;
   clear: both;
 }
-
+button{
+  background: none repeat scroll 0 0 #131314;
+      border: none;
+      color: #FFFFFF;
+      height: 30px;
+      left: 30%;
+      position: relative;
+      bottom: 10px;
+      width: 80px;
+}
 footer {
   text-align: center;
   padding: 3px;
@@ -443,6 +465,9 @@ footer {
     </div>
     <div class="row">
       <input type="submit" value="Submit" >
+    </div>
+     <div class="row">
+      <input type="reset" value="Reset Form" >
     </div>
   </form>
   <button onclick="goBack()">Go Back</button>
