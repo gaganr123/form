@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  
+}
+p{
+ background-color: bisque;
+  
+}
+h2{
+ 
+  text-transform: uppercase;
+ 
+  background-image: url("bg.jpg");
+  background-size: cover;
+  color:azure;
+  
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+ 
+  padding: 20px;
+  background-image: url("ff.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  color: white;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  color: white;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;"><strong>Book Your Orders</strong> </h2>
+<p style="text-align: center;">Your Favourite Foods and Drinks are ready..!</p>
+
+<div class="container">
+  <form  method="POST" autocomplete="off" name="google-sheet">
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Customer Full Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="Fullname" placeholder="Customer full name.." required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="phone">Phone No:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="phone" name="phone" placeholder="Customer phone no.." required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="waiter">waiter Name:</label>
+      </div>
+      <div class="col-75">
+        <select id="waiter" name="Waitername">
+          <option value="waiter1">waiter1</option>
+          <option value="waiter2">waiter2</option>
+          <option value="waiter3">waiter3</option>
+          <option value="waiter4">waiter4</option>
+          <option value="waiter5">waiter5</option>
+          <option value="waiter6">waiter6</option>
+          <option value="waiter7">waiter7</option>
+          <option value="waiter8">waiter8</option>
+          <option value="waiter9">waiter9</option>
+          <option value="waiter10">waiter10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="table">Table No:</label>
+      </div>
+      <div class="col-75">
+        <select id="table" name="Tableno">
+          <option value="T1">T1</option>
+          <option value="T2">T2</option>
+          <option value="T3">T3</option>
+          <option value="T4">T4</option>
+          <option value="T5">T5</option>
+          <option value="T6">T6</option>
+          <option value="T7">T7</option>
+          <option value="T8">T8</option>
+          <option value="T9">T9</option>
+          <option value="T10">T10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender1">Food Item1:</label>
+      </div>
+      <div class="col-75">
+        <select id="gender1" name="FoodItem1">
+          <option value="0">0</option>
+          <option value="Veg Noodles">Veg Noodles</option>
+          <option value="Veg Momo">Veg Momo</option>
+          <option value="Non-Veg Momo">Non-Veg Momo</option>
+          <option value="Non-Veg Noodle">Non-Veg Noodle</option>
+          <option value="Fry Veg Rice">Fry Veg Rice</option>
+          <option value="Fry chicken Rice">Fry chicken Rice</option>
+          <option value="Chicken Chilly">Chicken Chilly</option>
+          <option value="Lollipop">Lollipop</option>
+          <option value="Egg & omlet">Egg & omlet</option>
+          <option value="Pasta">Pasta</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity1">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity1" name="QntyofFoodItem1">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender2">Food Item2:</label>
+      </div>
+      <div class="col-75">
+        <select id="gender2" name="FoodItem2">
+          <option value="0">0</option>
+          <option value="Veg Noodles">Veg Noodles</option>
+          <option value="Veg Momo">Veg Momo</option>
+          <option value="Non-Veg Momo">Non-Veg Momo</option>
+          <option value="Non-Veg Noodle">Non-Veg Noodle</option>
+          <option value="Fry Veg Rice">Fry Veg Rice</option>
+          <option value="Fry chicken Rice">Fry chicken Rice</option>
+          <option value="Chicken Chilly">Chicken Chilly</option>
+          <option value="Lollipop">Lollipop</option>
+          <option value="Egg & omlet">Egg & omlet</option>
+          <option value="Pasta">Pasta</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity2">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity2" name="QntyofFoodItem2">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender3">Food Item3:</label>
+      </div>
+      <div class="col-75">
+        <select id="gender3" name="FoodItem3">
+          <option value="0">0</option>
+          <option value="Veg Noodles">Veg Noodles</option>
+          <option value="Veg Momo">Veg Momo</option>
+          <option value="Non-Veg Momo">Non-Veg Momo</option>
+          <option value="Non-Veg Noodle">Non-Veg Noodle</option>
+          <option value="Fry Veg Rice">Fry Veg Rice</option>
+          <option value="Fry chicken Rice">Fry chicken Rice</option>
+          <option value="Chicken Chilly">Chicken Chilly</option>
+          <option value="Lollipop">Lollipop</option>
+          <option value="Egg & omlet">Egg & omlet</option>
+          <option value="Pasta">Pasta</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity3">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity3" name="QntyofFoodItem3">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="gender4">Food Item4:</label>
+      </div>
+      <div class="col-75">
+        <select id="gender4" name="FoodItem4">
+          <option value="0">0</option>
+          <option value="Veg Noodles">Veg Noodles</option>
+          <option value="Veg Momo">Veg Momo</option>
+          <option value="Non-Veg Momo">Non-Veg Momo</option>
+          <option value="Non-Veg Noodle">Non-Veg Noodle</option>
+          <option value="Fry Veg Rice">Fry Veg Rice</option>
+          <option value="Fry chicken Rice">Fry chicken Rice</option>
+          <option value="Chicken Chilly">Chicken Chilly</option>
+          <option value="Lollipop">Lollipop</option>
+          <option value="Egg & omlet">Egg & omlet</option>
+          <option value="Pasta">Pasta</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity4">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity4" name="QntyofFoodItem4">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="edu">Drink1:</label>
+      </div>
+      <div class="col-75">
+        <select id="edu" name="Drink1">
+          <option value="0">0</option>
+          <option value="Beer">Beer</option>
+          <option value="vodka">vodka</option>
+          <option value="wine">wine</option>
+          <option value="rum">rum</option>
+          <option value="whisky">whisky</option>
+          <option value="juice">juice</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity5">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity5" name="Qntyofdrink1">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="edu1">Drink2:</label>
+      </div>
+      <div class="col-75">
+        <select id="edu1" name="Drink2">
+          <option value="0">0</option>
+          <option value="Beer">Beer</option>
+          <option value="vodka">vodka</option>
+          <option value="wine">wine</option>
+          <option value="rum">rum</option>
+          <option value="whisky">whisky</option>
+          <option value="juice">juice</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity6">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity6" name="Qntyofdrink2">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="edu2">Drink3:</label>
+      </div>
+      <div class="col-75">
+        <select id="edu2" name="Drink3">
+          <option value="0">0</option>
+          <option value="Beer">Beer</option>
+          <option value="vodka">vodka</option>
+          <option value="wine">wine</option>
+          <option value="rum">rum</option>
+          <option value="whisky">whisky</option>
+          <option value="juice">juice</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+          <option value="rum">rum</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="quantity7">Quantity:</label>
+      </div>
+      <div class="col-75">
+        <select id="quantity7" name="Qntyofdrink3">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Message:</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="Message" placeholder="Type your message.." style="height:150px" required></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit" >
+    </div>
+  </form>
+  <button onclick="goBack()">Go Back</button>
+</div>
+
+<footer>
+  <p style="color: black;">2021@ All right Reserved
+  </p>
+</footer>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwdhFt_h19tFQlKavNIexxn_rCb_NBpeLU2_eAsQGaNt4SHY2UA2vLJF9TFq-3LJHcblQ/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert(" Order booked..! We Will Serve You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+</body>
+</html>
+<script>
+    function goBack() {
+      window.history.back()
+    }
+    </script>
